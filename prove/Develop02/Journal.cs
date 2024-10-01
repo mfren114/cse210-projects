@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+        using System.Collections.Generic;
 using System.IO;
 
 public class Journal
@@ -30,13 +30,26 @@ public class Journal
 
     public void SaveToFile(string file)
     {
-        StreamReader sr = new StreamReader("journal.txt");
-        sr.ReadLine();
+        string filename = "jounal.txt";
+        
+        using (StreamWriter outputfile = new StreamWriter(filename))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputfile.WriteLine($"Date:{entry._date}");
+                outputfile.WriteLine($"Prompt:{entry._promptText}");
+                outputfile.WriteLine($"{entry._entryText}");
+            }
+        }
     }
 
-    public void LoadFile()
+    public void LoadFile(string file)
     {
-
+        using (StreamReader read = new StreamReader("journal.txt"))
+        {
+            string journalEntries = read.ReadToEnd();
+            Console.Write(journalEntries);
+        }
     }
 
 
