@@ -11,6 +11,7 @@ public class Journal
     {
         Entry userEntry = new Entry();
         PromptGenerator prompt = new PromptGenerator();
+        userEntry.GetTime();
         userEntry.GetDate();
         prompt.GetRandomPrompt();
         userEntry.Response();
@@ -22,33 +23,34 @@ public class Journal
     {
         foreach (Entry entry in _entries)
         {
+            Console.WriteLine($"Time: {entry._time}");
             Console.WriteLine($"Date: {entry._date}");
             Console.WriteLine($"Prompt: {entry._promptText}");
-            Console.WriteLine($"{entry._entryText}");
+            Console.WriteLine($"Entry: {entry._entryText}");
         }
     }
 
-    public void SaveToFile(string file)
+    public void SaveToFile(List<Entry> _entries) 
     {
-        string filename = "jounal.txt";
+        string filename = "journal.txt";
         
         using (StreamWriter outputfile = new StreamWriter(filename))
         {
             foreach (Entry entry in _entries)
             {
-                outputfile.WriteLine($"Date:{entry._date}");
-                outputfile.WriteLine($"Prompt:{entry._promptText}");
-                outputfile.WriteLine($"{entry._entryText}");
+                outputfile.WriteLine($"{entry._time}, {entry._date}, {entry._promptText}, {entry._entryText}");
+                
             }
         }
     }
 
-    public void LoadFile(string file)
+    public void LoadFile()
     {
         using (StreamReader read = new StreamReader("journal.txt"))
         {
             string journalEntries = read.ReadToEnd();
             Console.Write(journalEntries);
+            //Return list of entries get file from user use split function 
         }
     }
 

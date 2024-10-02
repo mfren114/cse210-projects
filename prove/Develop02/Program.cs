@@ -1,3 +1,5 @@
+//For exceeding requirements I added the current time of the entry made. This is returned when you load or display.
+
 using System;
 using System.IO;
 
@@ -17,36 +19,37 @@ class Program
             Console.WriteLine("4. Load");
             Console.WriteLine("5. Quit");
             Console.Write("Choose a number ");
+            Console.Write("");
             string userResponse = Console.ReadLine();
             userNumber = int.Parse(userResponse);
             //Write
             if (userNumber == 1)
             {
                 journal.AddEntry();
-                break;  
+                
             }
             //Display
             else if (userNumber == 2)
             {
                 journal.Displayall();
-                break;
+                //break;
             }
             //Save
             else if (userNumber == 3)
             {
-                Console.WriteLine("Which file do you want to save to? ");
-                string saveFile = Console.ReadLine();
-                journal.SaveToFile(saveFile);
+                Console.WriteLine("Saved to Journal.txt");
+                //string saveFile = Console.ReadLine();
+                journal.SaveToFile(journal._entries);
                 Console.WriteLine("Your file has been saved!");
-                break;
+                //break;
             }
             //Load
             else if (userNumber == 4)
             {
                 Console.Write("Which file would you like to load? ");
                 string loadFile = Console.ReadLine();
-                journal.LoadFile(loadFile);
-                break;
+                journal.LoadFile();
+                //break;
             }
             //Quit
             else 
