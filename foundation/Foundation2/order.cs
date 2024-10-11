@@ -2,7 +2,7 @@ using System.Numerics;
 
 public class Order
 {
-    private List<Products> _productlist = new List<Products>();
+    private List<Products> _productList = new List<Products>();
     private Customer _customer {get; set;}
 
     public Order (Customer customer)
@@ -12,27 +12,36 @@ public class Order
 
     public void AddProduct(Products product)
     {
-        _productlist.Add(product);
+        _productList.Add(product);
     }
 
-    public float CalculateTotal(Products products, Customer customer)
+    public float CalculateTotal()
     {
-        float total = products.TotalCost() + customer.ShippingCost();
+        float total = 0;
+        foreach (Products product in _productList)
+        {
+            float productprice = product.TotalCost();
+            total += productprice + _customer.ShippingCost();  
+        }
         return total;
     }
 
     public void DisplayPackingLabel()
     {
-        Console.WriteLine("Packing Label");
-        foreach (Products product in _productlist)
+        Console.WriteLine("Packing Label:");
+        Console.WriteLine("____________________");
+        foreach (Products product in _productList)
         {
            product.DisplayProduct(); 
         }
+        Console.WriteLine(" ");
     }
     
     public void DisplayShippingLabel()
     {
-        Console.WriteLine("Shipping Label");
+        Console.WriteLine("Shipping Label:");
+        Console.WriteLine("____________________");
         _customer.DisplayCustomer();
+        Console.WriteLine(" ");
     }
 }
