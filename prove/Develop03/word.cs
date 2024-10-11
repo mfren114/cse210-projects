@@ -13,7 +13,7 @@ class Word
 
     private void ConvertTextList()
     {
-        _scriptureWords = _scripture.RefDisplay().Split(" ").ToList();
+        _scriptureWords = _scripture.Display().Split(" ").ToList();
     }
 
     public void RemoveWords()
@@ -39,7 +39,7 @@ class Word
 
     }
 
-    public string RefDisplay()
+    public string Display()
     {
         return string.Join(" ", _scriptureWords);
     }

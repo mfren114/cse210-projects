@@ -9,7 +9,7 @@ class Scripture
         _scriptureReference = scriptureReference;
     }
 
-    public string RefDisplay()
+    public string Display()
     {
         return string.Format("{0}", _scriptureText);
     }

@@ -11,7 +11,7 @@ class Reference
         _verse = verse;
     }
 
-    public string RefDisplay()
+    public string Display()
     {
         return string.Format("{0} {1}:{2}", _book, _chapter, _verse);
     }

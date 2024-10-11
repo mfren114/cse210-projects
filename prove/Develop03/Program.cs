@@ -15,7 +15,7 @@ class Program
         while (user != "quit")
         {
             Console.Clear();
-            Console.WriteLine(string.Format("{0} {1}", scriptRef.RefDisplay(), word.RefDisplay()));
+            Console.WriteLine(string.Format("{0} {1}", scriptRef.Display(), word.Display()));
             user = Console.ReadLine();
             word.RemoveWords();
         }
