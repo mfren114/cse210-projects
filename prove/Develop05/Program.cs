@@ -28,11 +28,17 @@ class Program
             }
             else if(userNumber == 2)
             {
-
+                Console.Clear();
+                Reflection reflection = new Reflection("Reflection Activity", "This activity will help you think and reflect on past times", 10);
+                reflection.Run();
+                break;
             }
             else if(userNumber == 3)
             {
-
+                Console.Clear();
+                Listing listing = new Listing("Listening Activity", "This activity will help you remember good times by having you list as many things as you can in certain area", 10, 1);
+                listing.Run();
+                break;
             }
             else
             {
