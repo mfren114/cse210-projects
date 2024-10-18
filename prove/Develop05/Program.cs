@@ -21,7 +21,10 @@ class Program
 
             if(userNumber == 1)
             {
-
+                Console.Clear();
+                Breathing breathing = new Breathing("Breathing Activity", "This activity will help you with your breathing", 10);
+                breathing.Run();
+                break;
             }
             else if(userNumber == 2)
             {
