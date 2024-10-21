@@ -22,21 +22,21 @@ class Program
             if(userNumber == 1)
             {
                 Console.Clear();
-                Breathing breathing = new Breathing("Breathing Activity", "This activity will help you with your breathing", 10);
+                Breathing breathing = new Breathing("Breathing Activity", "This activity will help you with your breathing", 0);
                 breathing.Run();
                 break;
             }
             else if(userNumber == 2)
             {
                 Console.Clear();
-                Reflection reflection = new Reflection("Reflection Activity", "This activity will help you think and reflect on past times", 10);
+                Reflection reflection = new Reflection("Reflection Activity", "This activity will help you think and reflect on past times", 0);
                 reflection.Run();
                 break;
             }
             else if(userNumber == 3)
             {
                 Console.Clear();
-                Listing listing = new Listing("Listening Activity", "This activity will help you remember good times by having you list as many things as you can in certain area", 10, 1);
+                Listing listing = new Listing("Listing Activity", "This activity will help you remember good times by having you list as many things as you can in a certain area", 0, 0);
                 listing.Run();
                 break;
             }
