@@ -17,11 +17,6 @@ public class SimpleGoal : Goal
     {
         return _pointValue;
     }
-
-    public override string ToStore()
-    {
-        return $"{_type}, {GetName()}, {GetDescription()}, {GetPointValue()}";
-    }
     
     public string RecordEvent()
     {

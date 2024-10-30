@@ -22,10 +22,6 @@ public class CheckListGoal : Goal
         _pointValue = int.Parse(Console.ReadLine());
         return;
     }
-    public override string ToStore()
-    {
-        return $"{_type}, {GetName()}, {GetDescription()}, {GetPointValue()}";
-    }
 
     public string RecordEvent()
     {

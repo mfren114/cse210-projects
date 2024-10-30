@@ -34,9 +34,6 @@ public abstract class Goal
     }
 
     public abstract void DisplayPointValue();
-    public abstract string ToStore();
-
-    
 
 
 }

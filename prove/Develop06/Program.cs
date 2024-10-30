@@ -40,19 +40,16 @@ class Program
             {
                 goal = new SimpleGoal("", "", 0);
                 goal.GetName();
-                goal.ToStore();
                 goal.DisplayPointValue();
             }
             else if (userGoalInput == 2)
             {
                 goal = new EternalGoal("", "", 0, 0);
-                goal.ToStore();
                 goal.DisplayPointValue();
             }
             else if (userGoalInput == 3)
             {
-                goal = new CheckListGoal("", "", 0);
-                goal.ToStore();
+                goal = new CheckListGoal("", "", 0);;
                 goal.DisplayPointValue();
             }
         }
