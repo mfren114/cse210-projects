@@ -1,10 +1,29 @@
 public class EternalGoal : Goal
 {
+    private string _type = "Eternal";
     private int _eventCount;
+    private int _pointValue;
     
-    public EternalGoal(string name, string description, int pointValue) : base(name, description, pointValue)
+    public EternalGoal(string name, string description, int eventCount, int pointValue) : base(name, description)
     {
+        _eventCount = eventCount;
+        _pointValue = pointValue;
+    }
 
+    public override void DisplayPointValue()
+    {
+        Console.Write("How many points is this goal worth? ");
+        _pointValue = int.Parse(Console.ReadLine());
+        return;
+    }
+    public int GetPointValue()
+    {
+        return _pointValue;
+    }
+
+    public override string ToStore()
+    {
+        return $"{_type}, {GetName()}, {GetDescription()}, {GetPointValue()}";
     }
 
     public string RecordEvent()
@@ -16,5 +35,5 @@ public class EternalGoal : Goal
     {
         return 0;
     }
-    
+
 }

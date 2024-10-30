@@ -34,18 +34,26 @@ class Program
             Console.Write("Which goal number would you like to choose: ");
             string userGoalResponse = Console.ReadLine();
             userGoalInput = int.Parse(userGoalResponse);
+            Goal goal = null;
 
             if (userGoalInput == 1)
             {
-                Console.WriteLine("1");
+                goal = new SimpleGoal("", "", 0);
+                goal.GetName();
+                goal.ToStore();
+                goal.DisplayPointValue();
             }
             else if (userGoalInput == 2)
             {
-                Console.WriteLine("2");
+                goal = new EternalGoal("", "", 0, 0);
+                goal.ToStore();
+                goal.DisplayPointValue();
             }
             else if (userGoalInput == 3)
             {
-                Console.WriteLine("3");
+                goal = new CheckListGoal("", "", 0);
+                goal.ToStore();
+                goal.DisplayPointValue();
             }
         }
         else if (userMenuInput == 2)
